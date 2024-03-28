@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
-import logo from '@/images/logo.svg'
 import { clamp } from '@/lib/clamp'
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -169,7 +168,7 @@ function Avatar({
       {...props}
     >
       <Image
-        src={logo}
+        src={"/logo.svg"}
         alt="Maik Buse"
         className={clsx(large ? 'h-40 w-40' : 'h-20 w-20')}
         priority
