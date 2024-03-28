@@ -24,6 +24,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: mbuse0/home-web
+          tags: |
+            type=sha,enable=true
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
