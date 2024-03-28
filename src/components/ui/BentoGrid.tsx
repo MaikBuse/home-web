@@ -44,7 +44,7 @@ const items = [
   },
   {
     title: "Container Orchestration",
-    description: "Let me orchestrate your digital infrastructure with the precision, ensuring seamless harmony across your services.",
+    description: "Let me orchestrate your digital infrastructure, ensuring seamless harmony across your services.",
     header:
       <Image
         src={container}
@@ -243,7 +243,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "md:h-[420px] lg:h-[425px] xl:h-[380px] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-2 bg-black border-white/[0.2] border justify-between flex flex-col space-y-2",
+        "md:h-[420px] lg:h-[420px] xl:h-[380px] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-2 bg-black border-white/[0.2] border justify-between flex flex-col space-y-2",
         className
       )}
     >
