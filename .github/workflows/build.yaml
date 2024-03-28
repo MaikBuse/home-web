@@ -40,6 +40,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          cache-from: type=registry,ref=${{ env.DOCKER_IMAGE_NAME }}:cache-latest
+          cache-to: type=registry,ref=${{ env.DOCKER_IMAGE_NAME }}:cache-latest,mode=max
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
