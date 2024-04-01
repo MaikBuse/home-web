@@ -1,15 +1,26 @@
 version: 2.1
 
-machine:
-  image: ubuntu-2004:current
-resource_class: arm.medium
 orbs:
   docker: circleci/docker@2.6.0
-workflows:
-  build:
-    jobs:
-      - docker/publish:
-          deploy: true
+executors:
+  arm:
+    machine:
+      image: ubuntu-2004:current
+    resource_class: arm.medium
+jobs:
+  publish:
+    executor: arm
+    steps:
+      - checkout
+      - docker/check
+      - docker/build:
+          image: mbuse0/home-web
+          tag: ${CIRCLE_SHA1}
+      - docker/push:
           registry: docker.io 
           image: mbuse0/home-web
           tag: ${CIRCLE_SHA1}
+workflows:
+  build:
+    jobs:
+      - publish
