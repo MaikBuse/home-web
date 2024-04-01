@@ -11,5 +11,5 @@ workflows:
       - docker/publish:
           deploy: true
           registry: docker.io 
-          image: mbuse0/hira-web
+          image: mbuse0/home-web
           tag: ${CIRCLE_SHA1}
