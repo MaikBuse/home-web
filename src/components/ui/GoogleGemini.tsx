@@ -55,10 +55,10 @@ export const GoogleGeminiEffect = ({
 }) => {
   return (
     <div className={cn("sticky h-[90vh] top-[8rem] bottom-[8rem]", className)}>
-      <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+      <p className="text-2xl md:text-5xl sm:text-4xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
         {title}
       </p>
-      <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
+      <p className="text-lg md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
         {description}
       </p>
       <svg
