@@ -97,7 +97,12 @@ const items = [
       {
         title: "GitHub Actions",
         color: "fill-red-500"
-      }
+      },
+      {
+        title: "Circle CI",
+        color: "fill-yellow-500"
+      },
+
     ]
   },
   {
