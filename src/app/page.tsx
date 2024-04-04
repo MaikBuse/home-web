@@ -8,10 +8,10 @@ import { BackgroundBeams } from '@/components/ui/BackgroundBeams';
 export default async function Home() {
   return (
     <div className="pt-[5vh]">
-      <BackgroundBeams />
+      {/* <BackgroundBeams /> */}
       <Hero />
       <BentoGrid className="mx-auto" />
-      <GoogleGemini className="h-[400vh] mx-auto max-w-7xl lg:px-8 sm:px-8 pt-40" />
+      <GoogleGemini className="h-[400vh] mx-auto max-w-7xl lg:px-16 sm:px-8 pt-40" />
       <CallToAction />
     </div>
   )

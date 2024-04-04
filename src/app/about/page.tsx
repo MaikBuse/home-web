@@ -15,6 +15,7 @@ import ArrowDownIcon from '@/components/icons/ArrowDownIcon'
 import BriefcaseIcon from '@/components/icons/BriefcaseIcon'
 import MailIcon from '@/components/icons/MailIcon'
 import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards'
+import LogoCloud from '@/components/LogoCloud'
 
 interface Role {
   company: string
@@ -115,10 +116,10 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <NormalButton href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-hover:stroke-zinc-50 group-active:stroke-zinc-50" />
-      </NormalButton>
+      {/* <NormalButton href="#" variant="secondary" className="group mt-6 w-full"> */}
+      {/*   Download CV */}
+      {/*   <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-hover:stroke-zinc-50 group-active:stroke-zinc-50" /> */}
+      {/* </NormalButton> */}
     </div>
   )
 }
@@ -189,7 +190,7 @@ export default function About() {
           <Resume />
         </div>
       </div>
-      <InfiniteMovingCards className="top-14" />
+      <LogoCloud />
     </Container>
   );
 }
