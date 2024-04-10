@@ -18,6 +18,7 @@ export default function LogoCloud() {
             <Image
               className="max-h-40 w-full object-contain object-left"
               src={pspo}
+              placeholder="blur"
               alt="Professional Productowner"
               width={150}
               height={150}
@@ -25,6 +26,7 @@ export default function LogoCloud() {
             <Image
               className="max-h-40 w-full object-contain object-left"
               src={psm2}
+              placeholder="blur"
               alt="Professional Scrum Master II"
               width={150}
               height={150}
@@ -32,6 +34,7 @@ export default function LogoCloud() {
             <Image
               className="max-h-40 w-full object-contain object-left"
               src={princeBadge}
+              placeholder="blur"
               alt="PRINCE2 Foundation"
               width={150}
               height={150}

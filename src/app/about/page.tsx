@@ -181,9 +181,11 @@ export default function About() {
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
-                alt=""
+                alt="Maik Buse"
+                placeholder='blur'
                 className="aspect-square rounded-2xl object-cover bg-zinc-800"
                 sizes="(min-width: 1024px) 32rem, 20rem"
+                priority={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto"

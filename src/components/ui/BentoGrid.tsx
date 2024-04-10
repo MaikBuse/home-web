@@ -21,6 +21,7 @@ const items = [
         src={cloud}
         alt="Public Cloud Management"
         placeholder="blur"
+        priority={true}
         sizes="100vw"
         style={{
           width: "100%",
@@ -50,6 +51,7 @@ const items = [
         src={container}
         alt="Container Orchestration"
         placeholder="blur"
+        priority={true}
         style={{
           maxWidth: "100%",
           height: "auto",
@@ -78,6 +80,7 @@ const items = [
       <Image
         src={devops}
         alt="Development Operations"
+        priority={true}
         placeholder="blur"
         style={{
           maxWidth: "100%",

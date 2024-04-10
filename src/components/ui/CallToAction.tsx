@@ -17,6 +17,7 @@ export default function CallToAction({ buttonText, buttonHref }: { buttonText: s
               <Image
                 className="h-72 w-full rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
                 src={templeImage}
+                placeholder="blur"
                 alt="Me walking towards a temple"
               />
             </Link>

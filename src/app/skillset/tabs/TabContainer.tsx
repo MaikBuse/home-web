@@ -25,10 +25,12 @@ export default function TabContainer(
           </div>
           <Image
             src={image}
+            placeholder='blur'
             alt={title}
             className="relative -z-20 min-w-full max-w-xl rounded-xl shadow-xl ring-1 ring-white/10 lg:row-span-4 lg:w-[64rem] lg:max-w-none"
             width={2432}
             height={1442}
+            priority={true}
           />
           <div className="max-w-xl lg:row-start-3 lg:mt-10 lg:max-w-md lg:border-t lg:border-white/10 lg:pt-10">
             <dl className="max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
