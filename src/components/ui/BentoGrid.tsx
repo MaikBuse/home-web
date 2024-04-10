@@ -66,9 +66,9 @@ const items = [
         color: "fill-blue-500"
       },
       {
-        title: "Helm",
+        title: "Argo CD",
         color: "fill-green-500"
-      }
+      },
     ]
   },
   {
