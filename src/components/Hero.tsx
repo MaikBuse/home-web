@@ -1,9 +1,7 @@
 import React from "react";
 import { Container } from "./Container";
-import {
-  GitHubIcon,
-} from '@/components/SocialIcons'
 import Link from "next/link";
+import { GitHubIcon } from "./social/SocialIcons";
 
 function SocialLink({
   icon: Icon,
