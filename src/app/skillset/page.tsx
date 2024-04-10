@@ -15,10 +15,10 @@ export default async function ArticlesIndex() {
       <Container className="mt-16 sm:mt-32">
         <header className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-100">
-            How I'm Shaping the Future:<br />A Catalog of My Skills.
+            How I&apos;m Shaping the Future:<br />A Catalog of My Skills.
           </h1>
           <p className="mt-6 text-base text-zinc-400">
-            Over the years, I've honed a diverse set of skills through practical experience and relentless curiosity. Here's a glimpse into the capabilities that fuel my drive to innovate and impact.
+            Over the years, I&apos;ve honed a diverse set of skills through practical experience and relentless curiosity. Here&apos;s a glimpse into the capabilities that fuel my drive to innovate and impact.
           </p>
         </header>
         <div className="mt-16 sm:mt-20">

@@ -13,11 +13,11 @@ import { Container } from '@/components/Container'
 import portraitImage from '@/images/photos/portrait.jpg'
 import BriefcaseIcon from '@/components/icons/BriefcaseIcon'
 import MailIcon from '@/components/icons/MailIcon'
-import LogoCloud from '@/components/LogoCloud'
 import CallToAction from '@/components/ui/CallToAction'
 import SocialLink from '@/components/social/SocialLink'
 import { GitHubIcon } from '@/components/social/SocialIcons'
 import { BookOpenIcon } from '@heroicons/react/20/solid'
+import CertificateCloud from './CertificateCloud'
 
 interface Role {
   company: string
@@ -199,7 +199,7 @@ export default function About() {
             <div className="mt-6 space-y-7 text-base text-zinc-400">
               <p >
                 I still remember the thrill of staying up late into the night, huddled over my old computer,
-                pushing it to run a program it barely had the specs for. That moment wasn't just a childhood memory;
+                pushing it to run a program it barely had the specs for. That moment wasn&apos;t just a childhood memory;
                 it was the ignition of a lifelong passion for information technology. With each challenge I tackled,
                 my fascination grew, driving me to explore the limits of what could be created or solved in the digital
                 realm.
