@@ -20,6 +20,7 @@ const items = [
     description: "Elevate your digital landscape to the clouds, harnessing the power of versatile providers under my guidance.",
     header:
       <Image
+        className="saturate-[.65] group-hover/bento:saturate-100"
         src={cloud}
         alt="Public Cloud Management"
         placeholder="blur"
@@ -51,6 +52,7 @@ const items = [
     description: "Let me orchestrate your digital infrastructure, ensuring seamless harmony across your services.",
     header:
       <Image
+        className="saturate-[.65] group-hover/bento:saturate-100"
         src={container}
         alt="Container Orchestration"
         placeholder="blur"
@@ -82,6 +84,7 @@ const items = [
     description: "Streamlining your path from development to deployment, I leverage the state of the art to fuel rapid innovation.",
     header:
       <Image
+        className="saturate-[.65] group-hover/bento:saturate-100"
         src={devops}
         alt="Development Operations"
         priority={true}
@@ -119,6 +122,7 @@ const items = [
       "As the architect behind the scenes, I build the robust backbone that powers dynamic platforms with cutting-edge technologies.",
     header:
       <Image
+        className="saturate-[.65] group-hover/bento:saturate-100"
         src={backend}
         alt="Backend Development"
         placeholder="blur"
@@ -154,6 +158,7 @@ const items = [
       "Crafting immersive web and mobile experiences, I bring your vision to life, connecting users across every touchpoint.",
     header:
       <Image
+        className="saturate-[.65] group-hover/bento:saturate-100"
         src={frontend}
         alt="Web- and mobile app development"
         placeholder="blur"
@@ -181,6 +186,7 @@ const items = [
       "Translating complex data into actionable insights, I unlock the narratives hidden within numbers, guiding strategic decisions.",
     header:
       <Image
+        className="saturate-[.65] group-hover/bento:saturate-100"
         src={analytics}
         alt="Analytics"
         placeholder="blur"
@@ -234,7 +240,7 @@ export const BentoGridCluster = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3 max-w-7xl mx-auto",
+        "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 max-w-7xl mx-auto",
         className
       )}
     >
@@ -259,6 +265,7 @@ export const BentoGridItem = ({
   tags?: Tag[]
 }) => {
   const link = `/skillset/${href}`;
+
   return (
     <Link href={link}>
       <div
