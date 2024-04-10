@@ -81,9 +81,7 @@ export default function Projects() {
           ))}
         </ul>
       </SimpleLayout>
-      <div className='pt-20'>
-        <CallToAction buttonText='Skillset' buttonHref='/skillset' />
-      </div>
+      <CallToAction buttonText='Skillset' buttonHref='/skillset' className='pt-40' />
     </>
   );
 }

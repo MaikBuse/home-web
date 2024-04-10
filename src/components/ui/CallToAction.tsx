@@ -4,10 +4,11 @@ import SocialLink from '../social/SocialLink'
 import MailIcon from '../icons/MailIcon'
 import Link from "next/link"
 import { ConnectButton } from "../buttons/ConnectButton"
+import { cn } from "@/lib/cn"
 
-export default function CallToAction({ buttonText, buttonHref }: { buttonText: string, buttonHref: string }) {
+export default function CallToAction({ className = "", buttonText, buttonHref }: { className?: string, buttonText: string, buttonHref: string }) {
   return (
-    <div className="mx-auto pt-10 max-w-7xl lg:px-8 sm:px-8">
+    <div className={cn("mx-auto max-w-7xl lg:px-8 sm:px-8", className)}>
       <div className="relative isolate">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
