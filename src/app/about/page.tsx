@@ -4,18 +4,20 @@ import logoHira from '@/images/logos/hira.png'
 import logoSolance from '@/images/logos/solance.png'
 import logoLogaer from '@/images/logos/logaer.png'
 import logoSchuetz from '@/images/logos/schuetz.png'
+import logoWestminster from '@/images/logos/westminster.png'
+import logoNyenrode from '@/images/logos/nyenrode.png'
+import logoCbs from '@/images/logos/cbs.png'
 import { type ImageProps } from "next/image"
 
 import { Container } from '@/components/Container'
-import { GitHubIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/photos/portrait.jpg'
-import { NormalButton } from '@/components/buttons/NormalButton'
-import SocialLink from '@/components/SocialLink'
-import ArrowDownIcon from '@/components/icons/ArrowDownIcon'
 import BriefcaseIcon from '@/components/icons/BriefcaseIcon'
 import MailIcon from '@/components/icons/MailIcon'
-import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards'
 import LogoCloud from '@/components/LogoCloud'
+import CallToAction from '@/components/ui/CallToAction'
+import SocialLink from '@/components/social/SocialLink'
+import { GitHubIcon } from '@/components/social/SocialIcons'
+import { BookOpenIcon } from '@heroicons/react/20/solid'
 
 interface Role {
   company: string
@@ -124,6 +126,46 @@ function Resume() {
   )
 }
 
+function Education() {
+  let resume: Array<Role> = [
+    {
+      company: 'Cologne Business School, Cologne',
+      title: 'Master in Management',
+      logo: logoCbs,
+      start: '2013',
+      end: '2015',
+    },
+    {
+      company: 'University of Westminster, London',
+      title: 'Bachelor in Business Management (2/2)',
+      logo: logoWestminster,
+      start: '2013',
+      end: '2013',
+    },
+    {
+      company: 'Nyenrode Business University, Amsterdam',
+      title: 'Bachelor in Business Management (1/2)',
+      logo: logoNyenrode,
+      start: '2010',
+      end: '2012',
+    },
+  ]
+
+  return (
+    <div className="rounded-2xl border p-6 border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-100">
+        <BookOpenIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Education</span>
+      </h2>
+      <ol className="mt-6 space-y-4">
+        {resume.map((role, roleIndex) => (
+          <Role key={roleIndex} role={role} />
+        ))}
+      </ol>
+    </div>
+  )
+}
+
 export const metadata: Metadata = {
   title: 'About',
   description:
@@ -132,65 +174,70 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <div className="lg:pl-20">
-          <div className="max-w-xs px-2.5 lg:max-w-none">
-            <Image
-              src={portraitImage}
-              alt=""
-              className="aspect-square rounded-2xl object-cover bg-zinc-800"
-              sizes="(min-width: 1024px) 32rem, 20rem"
-              style={{
-                maxWidth: "100%",
-                height: "auto"
-              }} />
+    <>
+      <Container className="mt-16 sm:mt-32">
+        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+          <div className="lg:pl-20">
+            <div className="max-w-xs px-2.5 lg:max-w-none">
+              <Image
+                src={portraitImage}
+                alt=""
+                className="aspect-square rounded-2xl object-cover bg-zinc-800"
+                sizes="(min-width: 1024px) 32rem, 20rem"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
+            </div>
+          </div>
+          <div className="lg:order-first lg:row-span-2">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-100">
+              I’m Maik Buse. I live in Hamburg City, where I build the future.
+            </h1>
+            <div className="mt-6 space-y-7 text-base text-zinc-400">
+              <p >
+                I still remember the thrill of staying up late into the night, huddled over my old computer,
+                pushing it to run a program it barely had the specs for. That moment wasn't just a childhood memory;
+                it was the ignition of a lifelong passion for information technology. With each challenge I tackled,
+                my fascination grew, driving me to explore the limits of what could be created or solved in the digital
+                realm.
+              </p>
+              <p>
+                My passion didn&apos;t wane as I grew older; it evolved into a voracious appetite for learning
+                and innovation. Every day, I seized opportunities to learn new technologies and apply them
+                creatively in both personal and professional projects. This continuous learning and application
+                have been the bedrock of my career.
+              </p>
+              <p>
+                Today, as a solution architect and IT projectmanager, my broad expertise across cloud
+                infrastructure, front- and backend development, enables me to devise innovative solutions.
+                What sets me apart is not just my technical skills but my genuine enthusiasm. For me, technology
+                is an endless exploration, one that I am as passionate about today as I was when I first started.
+              </p>
+            </div>
+          </div>
+          <div className="lg:pl-20">
+            <ul className='pb-5' role="list">
+              <SocialLink href="https://github.com/MaikBuse" icon={GitHubIcon} className="mt-4">
+                Follow on GitHub
+              </SocialLink>
+              <SocialLink
+                href="mailto:contact@maikbuse.com"
+                icon={MailIcon}
+                className="mt-8 pb-5 border-b border-zinc-700/40"
+              >
+                contact@maikbuse.com
+              </SocialLink>
+            </ul>
+            <Resume />
+            <div className='pt-8'>
+              <Education />
+            </div>
           </div>
         </div>
-        <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-100">
-            I’m Maik Buse. I live in Hamburg City, where I build the future.
-          </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-400">
-            <p >
-              From a young age, coaxing computers to perform beyond their limitations was not just a challenge;
-              it was my passion. It was the beginning of a lifelong journey in information technnology.
-              Pushing the boundaries of creation and problem-solving became my daily pursuit, developing
-              a deep appreciation for the intricacies of the digital world.
-            </p>
-            <p>
-              My passion didn&apos;t wane as I grew older; it evolved into a voracious appetite for learning
-              and innovation. Every day, I seized opportunities to learn new technologies and apply them
-              creatively in both personal and professional projects. This continuous learning and application
-              have been the bedrock of my career.
-            </p>
-            <p>
-              Today, as a solution architect and IT projectmanager, my broad expertise across cloud
-              infrastructure, front- and backend development, enables me to devise innovative solutions.
-              What sets me apart is not just my technical skills but my genuine enthusiasm. This passion,
-              rooted in my childhood experiences, drives me to excel and to see beyond immediate challenges,
-              crafting solutions that redefine possibilities. For me, technology is an endless exploration, one that I
-              am as passionate about today as I was when I first started.
-            </p>
-          </div>
-        </div>
-        <div className="lg:pl-20">
-          <ul className='pb-5' role="list">
-            <SocialLink href="https://github.com/MaikBuse" icon={GitHubIcon} className="mt-4">
-              Follow on GitHub
-            </SocialLink>
-            <SocialLink
-              href="mailto:contact@maikbuse.com"
-              icon={MailIcon}
-              className="mt-8 pb-5 border-b border-zinc-700/40"
-            >
-              contact@maikbuse.com
-            </SocialLink>
-          </ul>
-          <Resume />
-        </div>
-      </div>
-      <LogoCloud />
-    </Container>
+        <LogoCloud />
+      </Container>
+      <CallToAction buttonText='Projects' buttonHref='/projects' />
+    </>
   );
 }
