@@ -1,60 +1,31 @@
 import { type Metadata } from 'next'
-
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
-
-function Article({ article }: { article: ArticleWithSlug }) {
-  return (
-    <article className="md:grid md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
-        <Card.Title href={`/articles/${article.slug}`}>
-          {article.title}
-        </Card.Title>
-        <Card.Eyebrow
-          as="time"
-          dateTime={article.date}
-          className="md:hidden"
-          decorate
-        >
-          {formatDate(article.date)}
-        </Card.Eyebrow>
-        <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read article</Card.Cta>
-      </Card>
-      <Card.Eyebrow
-        as="time"
-        dateTime={article.date}
-        className="mt-1 hidden md:block"
-      >
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-    </article>
-  )
-}
+import CallToAction from '@/components/ui/CallToAction'
+import { Tabs } from './tabs/Tabs'
+import { Container } from '@/components/Container'
 
 export const metadata: Metadata = {
-  title: 'Articles',
+  title: 'Skillset',
   description:
-    'All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.',
+    "How I'm Shaping the Future: A Catalog of My Skills.",
 }
 
 export default async function ArticlesIndex() {
-  let articles = await getAllArticles()
-
   return (
-    <SimpleLayout
-      title="Writing on software design, company building, and the aerospace industry."
-      intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
-    >
-      <div className="md:border-l md:pl-6 md:border-zinc-700/40">
-        <div className="flex max-w-3xl flex-col space-y-16">
-          {articles.map((article) => (
-            <Article key={article.slug} article={article} />
-          ))}
+    <>
+      <Container className="mt-16 sm:mt-32">
+        <header className="max-w-2xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-100">
+            How I'm Shaping the Future:<br />A Catalog of My Skills.
+          </h1>
+          <p className="mt-6 text-base text-zinc-400">
+            Over the years, I've honed a diverse set of skills through practical experience and relentless curiosity. Here's a glimpse into the capabilities that fuel my drive to innovate and impact.
+          </p>
+        </header>
+        <div className="mt-16 sm:mt-20">
+          <Tabs />
         </div>
-      </div>
-    </SimpleLayout>
+      </Container>
+      <CallToAction buttonText='Projects' buttonHref='/projects' />
+    </>
   )
 }
