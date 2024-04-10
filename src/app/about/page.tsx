@@ -118,10 +118,6 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      {/* <NormalButton href="#" variant="secondary" className="group mt-6 w-full"> */}
-      {/*   Download CV */}
-      {/*   <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-hover:stroke-zinc-50 group-active:stroke-zinc-50" /> */}
-      {/* </NormalButton> */}
     </div>
   )
 }
@@ -192,8 +188,8 @@ export default function About() {
                 }} />
             </div>
           </div>
-          <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-100">
+          <div className="lg:order-first lg:row-span-2 border-b border-zinc-700/40">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-100 pb-8">
               I’m Maik Buse. I live in Hamburg City, where I build the future.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-400">
@@ -217,29 +213,29 @@ export default function About() {
                 is an endless exploration, one that I am as passionate about today as I was when I first started.
               </p>
             </div>
-          </div>
-          <div className="lg:pl-20">
-            <ul className='pb-5' role="list">
+            <ul className='my-8' role="list">
               <SocialLink href="https://github.com/MaikBuse" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
               <SocialLink
                 href="mailto:contact@maikbuse.com"
                 icon={MailIcon}
-                className="mt-8 pb-5 border-b border-zinc-700/40"
+                className="mt-8"
               >
                 contact@maikbuse.com
               </SocialLink>
             </ul>
+          </div>
+          <div className="lg:pl-20">
             <Resume />
             <div className='pt-8'>
               <Education />
             </div>
           </div>
         </div>
-        <CertificateCloud />
+        <CertificateCloud className='py-32' />
       </Container>
-      <CallToAction buttonText='Projects' buttonHref='/projects' />
+      <CallToAction buttonText='Skillset' buttonHref='/skillset' />
     </>
   );
 }
