@@ -1,14 +1,16 @@
 import { cn } from '@/lib/cn'
 import Image, { StaticImageData } from "next/image"
+import TabCerts from './TabCerts'
 
 export default function TabContainer(
-  { className, image, title, description, features = [] }:
+  { className, image, title, description, features = [], certificates = [] }:
     {
       className?: string,
       image: StaticImageData,
       title: string,
       description: string,
       features?: { name: string, description: string, icon: any }[]
+      certificates?: { name: string, image: StaticImageData }[]
     }
 ) {
   return (
@@ -58,6 +60,9 @@ export default function TabContainer(
             }}
           />
         </div>
+        {certificates &&
+          <TabCerts certificates={certificates} />
+        }
       </div>
     </div>
   )

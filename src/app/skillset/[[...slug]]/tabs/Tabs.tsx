@@ -11,9 +11,12 @@ import frontend from '@/images/abstract/frontend.jpeg'
 import backend from '@/images/abstract/backend.jpeg'
 import analytics from '@/images/abstract/analytics.jpeg'
 import container from '@/images/abstract/container.jpeg'
+import princeBadge from '@/images/badges/prince2.png';
+import psm2 from '@/images/badges/psm2.png';
+import pspo from '@/images/badges/pspo.png';
 import { ArrowPathIcon, BoltIcon, BookOpenIcon, ChartBarIcon, ChatBubbleLeftIcon, CircleStackIcon, CloudIcon, CodeBracketSquareIcon, CogIcon, CommandLineIcon, CpuChipIcon, CubeIcon, CurrencyEuroIcon, DevicePhoneMobileIcon, DocumentIcon, GlobeAltIcon, HandRaisedIcon, PlayIcon, ScaleIcon, ServerIcon } from "@heroicons/react/20/solid";
 
-export function Tabs() {
+export function Tabs({ slug }: { slug: string }) {
   const tabs = [
     {
       title: "Project Management",
@@ -41,6 +44,20 @@ export function Tabs() {
             },
           ]
           }
+          certificates={[
+            {
+              name: "Professional Productowner",
+              image: pspo
+            },
+            {
+              name: "Professional Scrum Master II",
+              image: psm2
+            },
+            {
+              name: "PRINCE2 Foundation",
+              image: princeBadge
+            }
+          ]}
         />
       ),
     },
@@ -74,7 +91,7 @@ export function Tabs() {
     },
     {
       title: "Container Orchestration",
-      value: "containers",
+      value: "container",
       content: (
         <TabContainer
           title="Container Orchestration"
@@ -88,7 +105,7 @@ export function Tabs() {
             },
             {
               name: "Kubernetes",
-              description: "Expert in Kubernetes, managing complex container orchestration to ensure high availability and efficiency.",
+              description: "Proven in Kubernetes, managing complex container orchestration to ensure high availability and efficiency.",
               icon: ScaleIcon,
             },
             {
@@ -111,7 +128,7 @@ export function Tabs() {
           features={[
             {
               name: "Terraform",
-              description: "Expert in using Terraform for infrastructure as code, ensuring consistent and reproducible environments across development and production.",
+              description: "Proven in using Terraform for infrastructure as code, ensuring consistent and reproducible environments across development and production.",
               icon: CommandLineIcon,
             },
             {
@@ -144,7 +161,7 @@ export function Tabs() {
           features={[
             {
               name: "Rust",
-              description: "Proficient in Rust for systems programming, emphasizing safe concurrency and memory management for high-performance applications.",
+              description: "Expert in Rust for systems programming, emphasizing safe concurrency and memory management for high-performance applications.",
               icon: CpuChipIcon,
             },
             {
@@ -159,7 +176,7 @@ export function Tabs() {
             },
             {
               name: "Python",
-              description: "Expert in Python for versatile backend development, from web applications to data analysis, valuing its readability and extensive libraries.",
+              description: "Experienced in Python for versatile backend development, from web applications to data analysis, valuing its readability and extensive libraries.",
               icon: BookOpenIcon,
             }
           ]}
@@ -177,7 +194,7 @@ export function Tabs() {
           features={[
             {
               name: "React/Next.js",
-              description: "Expert in React and Next.js for building fast, SEO-friendly web applications, leveraging server-side rendering and static site generation for optimal performance.",
+              description: "Proven in React and Next.js for building fast, SEO-friendly web applications, leveraging server-side rendering and static site generation for optimal performance.",
               icon: GlobeAltIcon,
             },
             {
@@ -221,7 +238,8 @@ export function Tabs() {
 
   return (
     <div className="lg:h-[78rem] md:h-[88rem] sm:h-[95rem] h-[98rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-start justify-start mt-10 mb-24">
-      <TabsComponent tabs={tabs} />
+
+      <TabsComponent tabs={tabs} selectedTabName={slug} />
     </div>
   );
 }
@@ -236,16 +254,20 @@ export const TabsComponent = ({
   tabs: propTabs,
   containerClassName,
   activeTabClassName,
+  selectedTabName,
   tabClassName,
   contentClassName,
 }: {
   tabs: Tab[];
   containerClassName?: string;
   activeTabClassName?: string;
+  selectedTabName: string;
   tabClassName?: string;
   contentClassName?: string;
 }) => {
-  const [active, setActive] = useState<Tab>(propTabs[0]);
+  const selected = propTabs.find((tab) => { tab.value === selectedTabName });
+
+  const [active, setActive] = useState<Tab>(selected ? selected : propTabs[0]);
   const [tabs, setTabs] = useState<Tab[]>(propTabs);
 
   const moveSelectedTabToTop = (idx: number) => {

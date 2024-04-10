@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     "How I'm Shaping the Future: A Catalog of My Skills.",
 }
 
-export default async function ArticlesIndex() {
+export default async function Skillset({ params }: { params: { slug: string[] } }) {
+  const trimmedSlug = Array.isArray(params.slug) ? params.slug[0] : "";
+
   return (
     <>
       <Container className="mt-16 sm:mt-32">
@@ -22,10 +24,10 @@ export default async function ArticlesIndex() {
           </p>
         </header>
         <div className="mt-16 sm:mt-20">
-          <Tabs />
+          <Tabs slug={trimmedSlug} />
         </div>
       </Container>
-      <CallToAction buttonText='Projects' buttonHref='/projects' />
+      <CallToAction buttonText='Projects' buttonHref='/projects' className='pt-20' />
     </>
   )
 }
