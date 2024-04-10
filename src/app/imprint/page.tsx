@@ -16,7 +16,7 @@ export default function Imprint() {
       intro="This page provides the required legal information and contact details for transparency and accountability purposes."
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 sm:gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-4xl">
             Contact Information
           </h2>
@@ -37,7 +37,7 @@ export default function Imprint() {
           <h2 className="mt-8 text-2xl font-bold tracking-tight text-white sm:text-4xl">
             Disclaimer
           </h2>
-          <p className="mt-2 border-b border-zinc-700/40 text-white">
+          <p className="mt-2 border-b border-zinc-700/40 pb-8 text-white">
             The contents of this online offering have been created with care and based on
             my current level of knowledge, but are for informational purposes only and do
             not have any legally binding effect, unless it concerns legally mandatory information
@@ -48,7 +48,7 @@ export default function Imprint() {
           <h2 className="mt-8 text-2xl font-bold tracking-tight text-white sm:text-4xl">
             Liability for Content
           </h2>
-          <p className="mt-2 border-b border-zinc-700/40 text-white">
+          <p className="mt-2 border-b border-zinc-700/40 pb-8 text-white">
             As a service provider, I am responsible for my own content on these pages
             in accordance with general laws, as per Section 7, Paragraph 1 of the German
             Telemedia Act (TMG). However, according to Sections 8 to 10 of the TMG, as a
@@ -62,7 +62,7 @@ export default function Imprint() {
           <h2 className="mt-8 text-2xl font-bold tracking-tight text-white sm:text-4xl">
             Liability for Links
           </h2>
-          <p className="mt-2 border-b border-zinc-700/40 text-white">
+          <p className="mt-2 border-b border-zinc-700/40 pb-8 text-white">
             My offer includes links to external third-party websites, over whose content I
             have no control. Therefore, I cannot assume any liability for these external contents.
             The respective provider or operator of the pages is always responsible for the content
@@ -74,7 +74,7 @@ export default function Imprint() {
           <h2 className="mt-8 text-2xl font-bold tracking-tight text-white sm:text-4xl">
             Copyright
           </h2>
-          <p className="mt-2 border-b border-zinc-700/40 text-white">
+          <p className="mt-2 text-white">
             The content and works created by the site operators on these pages are subject to German
             copyright law. Duplication, editing, distribution, and any kind of exploitation outside the
             limits of copyright require the written consent of the respective author or creator. Downloads
