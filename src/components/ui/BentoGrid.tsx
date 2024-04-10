@@ -126,7 +126,7 @@ const items = [
         color: "fill-orange-800"
       },
       {
-        title: "Golang",
+        title: "Go-lang",
         color: "fill-red-500"
       },
       {
