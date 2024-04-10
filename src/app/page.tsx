@@ -3,13 +3,16 @@ import { BentoGrid } from '@/components/ui/BentoGrid'
 import React from "react";
 import { GoogleGemini } from '@/components/ui/GoogleGemini'
 import CallToAction from '@/components/ui/CallToAction';
+import { Container } from '@/components/Container';
 
 export default async function Home() {
   return (
     <div className="pt-[5vh]">
       <Hero />
       <BentoGrid className="mx-auto" />
-      <GoogleGemini className="h-[400vh] mx-auto max-w-7xl lg:px-9 md:px-12 sm:px-8 pt-40" />
+      <Container>
+        <GoogleGemini className="h-[250vh] pt-[15rem]" />
+      </Container>
       <CallToAction buttonText='About me' buttonHref='/about' />
     </div >
   )
