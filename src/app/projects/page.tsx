@@ -4,14 +4,25 @@ import Image from "next/image"
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoSolance from '@/images/logos/solance.png'
+import CallToAction from '@/components/ui/CallToAction'
 
 const projects = [
+  {
+    name: 'Alarmboard',
+    description:
+      `A Flutter application designed to streamline fire brigade operations,
+      enhancing coordination and response times. This intuitive tool facilitates incident management,
+      resource allocation, and real-time communication, ensuring efficient and effective emergency responses.`,
+    link: { href: 'https://alarmboard.de', label: 'alarmboard.de' },
+    logo: logoSolance,
+  },
   {
     name: 'Kubernetes on Hetzner',
     description:
       `The Kubernetes configurations setup to run this website and other applications. 
-      Let me show you how I used Terraform and other tools to bootstrapped the deployment`,
-    link: { href: 'http://github.com/MaikBuse', label: 'github.com' },
+      Let me show you how I used Terraform and other tools to bootstrap the deployment`,
+    link: { href: 'https://github.com/MaikBuse', label: 'github.com' },
     logo: logoPlanetaria,
   }
 ]
@@ -34,38 +45,45 @@ export const metadata: Metadata = {
 
 export default function Projects() {
   return (
-    <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones I can share with you."
-    >
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    <>
+      <SimpleLayout
+        title="Things I’ve made trying to put my dent in the universe."
+        intro="I’ve worked on tons of little projects over the years but these are the ones I'd like to share with you."
       >
-        {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
-            </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium transition group-hover:text-teal-500 text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
-          </Card>
-        ))}
-      </ul>
-    </SimpleLayout>
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {projects.map((project) => (
+            <Card as="li" key={project.name} className='h-[20rem] flex flex-col justify-between'>
+              <div>
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-0">
+                  <Image
+                    src={project.logo}
+                    alt=""
+                    className="h-8 w-8"
+                    unoptimized
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
+                </div>
+                <h2 className="mt-6 text-base font-semibold text-zinc-100">
+                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                </h2>
+                <Card.Description>{project.description}</Card.Description>
+              </div>
+              <p className="relative z-10 mt-6 flex text-sm font-medium transition group-hover:text-teal-500 text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
+            </Card>
+          ))}
+        </ul>
+      </SimpleLayout>
+      <div className='pt-20'>
+        <CallToAction buttonText='Skillset' buttonHref='/skillset' />
+      </div>
+    </>
   );
 }
