@@ -183,7 +183,8 @@ function Avatar({
 }
 
 export function Header() {
-  let isHomePage = usePathname() === '/' || usePathname() === '/imprint'
+  const path = usePathname();
+  let isHomePage = path === '/' || path === '/imprint'
 
   let headerRef = useRef<React.ElementRef<'div'>>(null)
   let avatarRef = useRef<React.ElementRef<'div'>>(null)
