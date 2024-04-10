@@ -6,6 +6,7 @@ import frontend from '@/images/abstract/frontend.jpeg'
 import backend from '@/images/abstract/backend.jpeg'
 import analytics from '@/images/abstract/analytics.jpeg'
 import container from '@/images/abstract/container.jpeg'
+import Link from "next/link";
 
 interface Tag {
   title: string,
@@ -15,6 +16,7 @@ interface Tag {
 const items = [
   {
     title: "Public Cloud Management",
+    href: "cloud",
     description: "Elevate your digital landscape to the clouds, harnessing the power of versatile providers under my guidance.",
     header:
       <Image
@@ -45,6 +47,7 @@ const items = [
   },
   {
     title: "Container Orchestration",
+    href: "container",
     description: "Let me orchestrate your digital infrastructure, ensuring seamless harmony across your services.",
     header:
       <Image
@@ -75,6 +78,7 @@ const items = [
   },
   {
     title: "Development Operations",
+    href: "devops",
     description: "Streamlining your path from development to deployment, I leverage the state of the art to fuel rapid innovation.",
     header:
       <Image
@@ -110,6 +114,7 @@ const items = [
   },
   {
     title: "Backend Development",
+    href: "backend",
     description:
       "As the architect behind the scenes, I build the robust backbone that powers dynamic platforms with cutting-edge technologies.",
     header:
@@ -144,6 +149,7 @@ const items = [
   },
   {
     title: "Web- and mobile app development",
+    href: "frontend",
     description:
       "Crafting immersive web and mobile experiences, I bring your vision to life, connecting users across every touchpoint.",
     header:
@@ -170,6 +176,7 @@ const items = [
   },
   {
     title: "Analytics",
+    href: "analytics",
     description:
       "Translating complex data into actionable insights, I unlock the narratives hidden within numbers, guiding strategic decisions.",
     header:
@@ -207,6 +214,7 @@ export function BentoGrid({ className }: { className?: string }) {
         <BentoGridItem
           key={i}
           title={item.title}
+          href={item.href}
           description={item.description}
           header={item.header}
           tags={item.tags}
@@ -238,41 +246,46 @@ export const BentoGridCluster = ({
 export const BentoGridItem = ({
   className,
   title,
+  href,
   description,
   header,
   tags
 }: {
   className?: string;
   title?: string | React.ReactNode;
+  href?: string;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   tags?: Tag[]
 }) => {
+  const link = `/skillset/${href}`;
   return (
-    <div
-      className={cn(
-        "md:h-[420px] lg:h-[420px] xl:h-[380px] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-2 bg-black border-white/[0.2] border justify-between flex flex-col space-y-2",
-        className
-      )}
-    >
-      <div className="flex-none">
-        {header}
-      </div>
-      <div className="flex flex-wrap justify-start gap-4">
-        {tags && tags.map((tag, i) => (
-          <BentoGridItemBadge key={i} title={tag.title} color={tag.color} />
-        ))
-        }
-      </div>
-      <div className="flex-1 group-hover/bento:translate-x-1 transition duration-200">
-        <div className="font-sans font-bold text-neutral-200 mb-2">
-          {title}
+    <Link href={link}>
+      <div
+        className={cn(
+          "md:h-[420px] lg:h-[420px] xl:h-[380px] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-2 bg-black border-white/[0.2] border justify-between flex flex-col space-y-2",
+          className
+        )}
+      >
+        <div className="flex-none">
+          {header}
         </div>
-        <div className="font-sans font-normal text-xs text-neutral-300">
-          {description}
+        <div className="flex flex-wrap justify-start gap-4">
+          {tags && tags.map((tag, i) => (
+            <BentoGridItemBadge key={i} title={tag.title} color={tag.color} />
+          ))
+          }
+        </div>
+        <div className="flex-1 group-hover/bento:translate-x-1 transition duration-200">
+          <div className="font-sans font-bold text-neutral-200 mb-2">
+            {title}
+          </div>
+          <div className="font-sans font-normal text-xs text-neutral-300">
+            {description}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
