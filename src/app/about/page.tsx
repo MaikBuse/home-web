@@ -237,7 +237,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <LogoCloud />
+        <CertificateCloud />
       </Container>
       <CallToAction buttonText='Projects' buttonHref='/projects' />
     </>

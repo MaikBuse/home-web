@@ -3,13 +3,13 @@ import princeBadge from '@/images/badges/prince2.png';
 import psm2 from '@/images/badges/psm2.png';
 import pspo from '@/images/badges/pspo.png';
 
-export default function LogoCloud() {
+export default function CertificateCloud() {
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
           <div className="mx-auto w-full max-w-xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-white">My expertise, certified by the world's trailblazers.</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white">My expertise, certified by the world&apos;s trailblazers.</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
               Certified in both technical mastery and project management, I turn innovative ideas into successful realities, ensuring projects excel from start to finish.
             </p>
