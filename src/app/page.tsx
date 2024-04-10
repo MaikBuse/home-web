@@ -11,8 +11,8 @@ export default async function Home() {
       {/* <BackgroundBeams /> */}
       <Hero />
       <BentoGrid className="mx-auto" />
-      <GoogleGemini className="h-[400vh] mx-auto max-w-7xl lg:px-16 sm:px-8 pt-40" />
-      <CallToAction />
+      <GoogleGemini className="h-[400vh] mx-auto max-w-7xl lg:px-9 md:px-12 sm:px-8 pt-40" />
+      <CallToAction buttonText='Projects' buttonHref='/projects' />
     </div>
   )
 }

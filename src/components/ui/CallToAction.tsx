@@ -1,11 +1,11 @@
 import Image from "next/image"
 import templeImage from '@/images/photos/temple.jpg'
-import SocialLink from '../SocialLink'
+import SocialLink from '../social/SocialLink'
 import MailIcon from '../icons/MailIcon'
 import Link from "next/link"
 import { ConnectButton } from "../buttons/ConnectButton"
 
-export default function CallToAction() {
+export default function CallToAction({ buttonText, buttonHref }: { buttonText: string, buttonHref: string }) {
   return (
     <div className="mx-auto pt-10 max-w-7xl lg:px-8 sm:px-8">
       <div className="relative isolate">
@@ -27,7 +27,7 @@ export default function CallToAction() {
                 I&apos;m all ears. Drop me an email or take a leisurely scroll through my pages to dive deeper into my world.
                 Who knows what sparks might fly when minds meet? Looking forward to hearing from you!
               </p>
-              <div className="mt-10 flex items-center justify-evenly">
+              <div className="mt-10 flex flex-wrap gap-y-10 gap-x-2 items-center justify-evenly">
                 <SocialLink
                   href="mailto:contact@maikbuse.com"
                   icon={MailIcon}
@@ -35,7 +35,7 @@ export default function CallToAction() {
                 >
                   contact@maikbuse.com
                 </SocialLink>
-                <ConnectButton text='Projects' href="/projects" />
+                <ConnectButton text={buttonText} href={buttonHref} />
               </div>
             </div>
           </div>
