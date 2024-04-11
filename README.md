@@ -67,12 +67,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This repository hosts the source code for my personal homepage, built using Next.js and React for robust and scalable front-end architecture, styled with TailwindCSS for a sleek and responsive design. Dive into the code to explore the implementation of modern web development techniques and responsive UI components.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ### Built With
