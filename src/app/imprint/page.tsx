@@ -73,6 +73,15 @@ export default function Imprint() {
               of an infringement. Upon notification of violations, I will remove such links immediately.
             </p>
             <h2 className="mt-8 text-2xl font-bold tracking-tight text-white sm:text-4xl">
+              Applicable Law
+            </h2>
+            <p className="mt-2 border-b border-zinc-700/40 pb-8 text-white">
+              Jurisdiction: The use of this website is subject to the laws of the Federal Republic of Germany.
+              For merchants, legal entities under public law, special funds under public law, and individuals who
+              do not have a general place of jurisdiction in Germany, Hamburg is considered the agreed place of
+              jurisdiction.
+            </p>
+            <h2 className="mt-8 text-2xl font-bold tracking-tight text-white sm:text-4xl">
               Copyright
             </h2>
             <p className="mt-2 text-white">
