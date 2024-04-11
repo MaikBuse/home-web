@@ -8,8 +8,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -24,8 +22,6 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -33,23 +29,17 @@
     <img src="https://maikbuse.com/logo.svg" alt="Logo Maik Buse" width="80" height="80">
   </a>
 
-<h3 align="center">Personal Homepage Maik Buse</h3>
+<h3 align="center">Homepage of Maik Buse</h3>
 
   <p align="center">
-    project_description
-    <br />
     <a href="https://maikbuse.com"><strong>Visit my homepage »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
     <a href="mailto:contact@maikbuse.com">Report Bug</a>
     ·
     <a href="mailto:contact@maikbuse.com">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -68,22 +58,18 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+This repository hosts the source code for my personal homepage, built using Next.js and React for robust and scalable front-end architecture, styled with TailwindCSS for a sleek and responsive design. Dive into the code to explore the implementation of modern web development techniques and responsive UI components.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,26 +79,18 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Tailwindcss][Tailwindcss]][Tailwindcss-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Not much is needed. Just node as as a runtime environment for javascript and npm as a package manager.
 * npm
   ```sh
   npm install npm@latest -g
@@ -120,61 +98,32 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
+
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/MaikBuse/hira-home.git
    ```
-3. Install NPM packages
+
+2. Install NPM packages
+
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+
+3. Start a local development server
+
+   ```sh
+   npm run dev
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details. However, this project uses components and templates from Tailwind UI, which are licensed under their own terms. Please be aware that while you can use, modify, and distribute my code under the MIT license, the Tailwind UI components included in this project are subject to Tailwind UI's licensing terms. For more information on Tailwind UI's license, please visit [their website](https://tailwindui.com/).
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/MaikBuse/home-web/blob/main/LICENSE.md) file for details. However, this project uses components and templates from Tailwind UI, which are licensed under their own terms. Please be aware that while you can use, modify, and distribute my code under the MIT license, the Tailwind UI components included in this project are subject to Tailwind UI's licensing terms. For more information on Tailwind UI's license, please visit [their website](https://tailwindui.com/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -185,18 +134,15 @@ Project Link: [https://github.com/MaikBuse/home-web](https://github.com/MaikBuse
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Tailwind UI](https://tailwindui.com/)
+* [Aceternity UI](https://ui.aceternity.com/)
+* [Headless UI](https://headlessui.com/)
+* [heroicons](https://heroicons.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -209,9 +155,11 @@ Project Link: [https://github.com/MaikBuse/home-web](https://github.com/MaikBuse
 [issues-shield]: https://img.shields.io/github/issues/MaikBuse/home-web.svg?style=for-the-badge
 [issues-url]: https://github.com/MaikBuse/home-web/issues
 [license-shield]: https://img.shields.io/github/license/MaikBuse/home-web.svg?style=for-the-badge
-[license-url]: https://github.com/MaikBuse/home-web/blob/main/LICENSE.txt
+[license-url]: https://github.com/MaikBuse/home-web/blob/main/LICENSE.md
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[Tailwindcss]: https://img.shields.io/badge/tailwindcss-0F172A?style=for-the-badge&&logo=tailwindcss
+[Tailwindcss-url]: https://tailwindcss.com
