@@ -35,9 +35,9 @@
     <a href="https://maikbuse.com"><strong>Visit my homepage »</strong></a>
     <br />
     <br />
-    <a href="mailto:contact@maikbuse.com">Report Bug</a>
+    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="mailto:contact@maikbuse.com">Request Feature</a>
+    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -88,7 +88,6 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 Not much is needed. Just node as as a runtime environment for javascript and npm as a package manager.
-* npm
   ```sh
   npm install npm@latest -g
   ```
