@@ -88,6 +88,10 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 Not much is needed. Just node as as a runtime environment for javascript and npm as a package manager.
+
+* To install node, please follow the instructions on [nodejs.org](https://nodejs.org/en/download)
+* Also make sure to update to the latest version of npm
+
   ```sh
   npm install npm@latest -g
   ```
@@ -100,7 +104,7 @@ Not much is needed. Just node as as a runtime environment for javascript and npm
    git clone https://github.com/MaikBuse/hira-home.git
    ```
 
-2. Install NPM packages
+2. Use npm to install the dependencies
 
    ```sh
    npm install
