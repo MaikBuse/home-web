@@ -3,7 +3,6 @@ import Image from "next/image"
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoNext from '@/images/logos/next-js.svg'
 import logoSolance from '@/images/logos/solance.png'
 import CallToAction from '@/components/ui/CallToAction'
@@ -17,14 +16,6 @@ const projects = [
       resource allocation, and real-time communication, ensuring efficient and effective emergency responses.`,
     link: { href: 'https://alarmboard.de', label: 'alarmboard.de' },
     logo: logoSolance,
-  },
-  {
-    name: 'Cloud Configuration',
-    description:
-      `The code based setup to run this website and other applications. 
-      Let me show you how I used Terraform and other tools to bootstrap the deployment`,
-    link: { href: 'https://github.com/MaikBuse/cloud-config', label: 'github.com' },
-    logo: logoPlanetaria,
   },
   {
     name: 'Next.js Homepage',
