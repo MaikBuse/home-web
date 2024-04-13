@@ -14,7 +14,7 @@ export default function CertificateCloud({ className = "" }: { className?: strin
               Certified in both technical mastery and project management, I turn innovative ideas into successful realities, ensuring projects excel from start to finish.
             </p>
           </div>
-          <div className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
+          <div className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-x-4 gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
             <Image
               className="max-h-40 w-full object-contain object-left"
               src={pspo}
