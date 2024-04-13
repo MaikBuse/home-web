@@ -135,7 +135,7 @@ function Education() {
       company: 'University of Westminster, London',
       title: 'Bachelor in Business Management (2/2)',
       logo: logoWestminster,
-      start: '2013',
+      start: '2012',
       end: '2013',
     },
     {
