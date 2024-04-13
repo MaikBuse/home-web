@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoNext from '@/images/logos/next-js.svg'
 import logoSolance from '@/images/logos/solance.png'
 import CallToAction from '@/components/ui/CallToAction'
 
@@ -18,12 +19,20 @@ const projects = [
     logo: logoSolance,
   },
   {
-    name: 'Kubernetes on Hetzner',
+    name: 'Cloud Configuration',
     description:
-      `The Kubernetes configurations setup to run this website and other applications. 
+      `The code based setup to run this website and other applications. 
       Let me show you how I used Terraform and other tools to bootstrap the deployment`,
-    link: { href: 'https://github.com/MaikBuse', label: 'github.com' },
+    link: { href: 'https://github.com/MaikBuse/cloud-config', label: 'github.com' },
     logo: logoPlanetaria,
+  },
+  {
+    name: 'Next.js Homepage',
+    description:
+      `Explore how I built this website using the Next.js framework. Discover how you can leverage its robust 
+      features to deliver a dynamic, fast, and SEO-friendly web experience. `,
+    link: { href: 'https://github.com/MaikBuse/home-web', label: 'github.com' },
+    logo: logoNext,
   }
 ]
 
@@ -61,7 +70,7 @@ export default function Projects() {
                   <Image
                     src={project.logo}
                     alt=""
-                    className="h-8 w-8"
+                    className="h-10 w-10"
                     unoptimized
                     style={{
                       maxWidth: "100%",
