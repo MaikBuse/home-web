@@ -236,10 +236,24 @@ export function Tabs({ slug }: { slug: string }) {
     },
   ];
 
-  return (
-    <div className="lg:h-[78rem] md:h-[88rem] sm:h-[95rem] h-[98rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-start justify-start mt-10 mb-24">
+  const tabsOrdered = [...tabs];
 
-      <TabsComponent tabs={tabs} selectedTabName={slug} />
+  tabsOrdered.sort((a, b) => {
+    // Check if `a` is the item we want to move to the front
+    if (a.value === slug) {
+      return -1; // Move `a` towards the front
+    }
+    // Check if `b` is the item we want to move to the front
+    else if (b.value === slug) {
+      return 1; // Move `b` towards the front, effectively pushing `a` back
+    }
+    // Keep the original order for other items
+    return 0;
+  });
+
+  return (
+    <div className="h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-start justify-start">
+      <TabsComponent tabs={tabs} tabsOrdered={tabsOrdered} />
     </div>
   );
 }
@@ -252,26 +266,24 @@ type Tab = {
 
 export const TabsComponent = ({
   tabs: propTabs,
+  tabsOrdered,
   containerClassName,
   activeTabClassName,
-  selectedTabName,
   tabClassName,
   contentClassName,
 }: {
   tabs: Tab[];
+  tabsOrdered: Tab[];
   containerClassName?: string;
   activeTabClassName?: string;
-  selectedTabName: string;
   tabClassName?: string;
   contentClassName?: string;
 }) => {
-  const selected = propTabs.find((tab) => { tab.value === selectedTabName });
-
-  const [active, setActive] = useState<Tab>(selected ? selected : propTabs[0]);
-  const [tabs, setTabs] = useState<Tab[]>(propTabs);
+  const [active, setActive] = useState<Tab>(tabsOrdered[0]);
+  const [tabs, setTabs] = useState<Tab[]>(tabsOrdered);
 
   const moveSelectedTabToTop = (idx: number) => {
-    const newTabs = [...propTabs];
+    const newTabs = [...tabsOrdered];
     const selectedTab = newTabs.splice(idx, 1);
     newTabs.unshift(selectedTab[0]);
     setTabs(newTabs);
@@ -296,7 +308,7 @@ export const TabsComponent = ({
             }}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
-            className={cn("relative w-32 px-4 py-2 rounded-full", tabClassName)}
+            className={cn("relative w-32 h-24 px-4 py-2", tabClassName)}
             style={{
               transformStyle: "preserve-3d",
             }}
@@ -306,7 +318,7 @@ export const TabsComponent = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-zinc-800 rounded-full",
+                  "absolute inset-0 bg-zinc-800",
                   activeTabClassName
                 )}
               />
@@ -360,9 +372,20 @@ export const FadeInDiv = ({
           }}
           className={cn("w-full h-full absolute top-0 left-0", className)}
         >
-          {tab.content}
+          {isActive(tab) ? tab.content : <BackgroundTab title={tab.title} />}
         </motion.div>
-      ))}
-    </div>
+      ))
+      }
+    </div >
   );
 };
+
+const BackgroundTab = ({ title }: { title: string }) => {
+  return (
+    <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-zinc-700 to-zinc-900">
+      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        {title}
+      </h2>
+    </div>
+  );
+}

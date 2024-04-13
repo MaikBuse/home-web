@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Skillset({ params }: { params: { slug: string[] } }) {
-  const trimmedSlug = Array.isArray(params.slug) ? params.slug[0] : "";
+  const trimmedSlug = Array.isArray(params.slug) ? params.slug[0] : "project";
 
   return (
     <>
@@ -23,11 +23,11 @@ export default async function Skillset({ params }: { params: { slug: string[] } 
             Over the years, I&apos;ve honed a diverse set of skills through practical experience and relentless curiosity. Here&apos;s a glimpse into the capabilities that fuel my drive to innovate and impact.
           </p>
         </header>
-        <div className="mt-16 sm:mt-20">
+        <div className="mt-20">
           <Tabs slug={trimmedSlug} />
         </div>
       </Container>
-      <CallToAction buttonText='Projects' buttonHref='/projects' className='pt-20' />
+      <CallToAction className='lg:pt-[58em] md:pt-[68rem] sm:pt-[75rem] xs:pt-[84rem] pt-[90rem]' buttonText='Projects' buttonHref='/projects' />
     </>
   )
 }

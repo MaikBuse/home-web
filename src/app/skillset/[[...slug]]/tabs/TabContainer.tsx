@@ -14,8 +14,8 @@ export default function TabContainer(
     }
 ) {
   return (
-    <div className={cn("mx-auto max-w-7xl sm:px-6 lg:px-8", className)}>
-      <div className="relative isolate overflow-hidden bg-gradient-to-br from-zinc-700 to-zinc-900 px-6 py-20 sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24">
+    <div className={cn("mx-auto max-w-7xl sm:px-6 lg:px-8 pt-5", className)}>
+      <div className="relative isolate overflow-hidden bg-gradient-to-br from-zinc-700 to-zinc-900 px-6 rounded-3xl sm:px-10 py-14 sm:py-24 xs:py-16 lg:py-24 xl:px-24">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
           <div className="lg:row-start-2 lg:max-w-md">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -26,7 +26,7 @@ export default function TabContainer(
             </p>
           </div>
           <Image
-            className="relative saturate-[0.75] -z-20 min-w-full max-w-xl rounded-xl shadow-xl ring-1 ring-white/10 lg:row-span-4 lg:w-[64rem] lg:max-w-none"
+            className="relative saturate-[0.5] -z-20 min-w-full max-w-xl rounded-xl shadow-xl ring-1 ring-white/10 lg:row-span-4 lg:w-[64rem] lg:max-w-none"
             src={image}
             placeholder='blur'
             alt={title}
