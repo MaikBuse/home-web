@@ -20,11 +20,11 @@ const items = [
     description: "Elevate your digital landscape to the clouds, harnessing the power of versatile providers under my guidance.",
     header:
       <Image
-        className="saturate-[.65] group-hover/bento:saturate-100"
+        className="saturate-[.3] group-hover/bento:saturate-100"
         src={cloud}
         alt="Public Cloud Management"
         placeholder="blur"
-        priority={true}
+        priority
         sizes="100vw"
         style={{
           width: "100%",
@@ -52,11 +52,11 @@ const items = [
     description: "Let me orchestrate your digital infrastructure, ensuring seamless harmony across your services.",
     header:
       <Image
-        className="saturate-[.65] group-hover/bento:saturate-100"
+        className="saturate-[.3] group-hover/bento:saturate-100"
         src={container}
         alt="Container Orchestration"
         placeholder="blur"
-        priority={true}
+        priority
         style={{
           maxWidth: "100%",
           height: "auto",
@@ -84,10 +84,10 @@ const items = [
     description: "Streamlining your path from development to deployment, I leverage the state of the art to fuel rapid innovation.",
     header:
       <Image
-        className="saturate-[.65] group-hover/bento:saturate-100"
+        className="saturate-[.3] group-hover/bento:saturate-100"
         src={devops}
         alt="Development Operations"
-        priority={true}
+        priority
         placeholder="blur"
         style={{
           maxWidth: "100%",
@@ -122,7 +122,7 @@ const items = [
       "As the architect behind the scenes, I build the robust backbone that powers dynamic platforms with cutting-edge technologies.",
     header:
       <Image
-        className="saturate-[.65] group-hover/bento:saturate-100"
+        className="saturate-[.3] group-hover/bento:saturate-100"
         src={backend}
         alt="Backend Development"
         placeholder="blur"
@@ -158,7 +158,7 @@ const items = [
       "Crafting immersive web and mobile experiences, I bring your vision to life, connecting users across every touchpoint.",
     header:
       <Image
-        className="saturate-[.65] group-hover/bento:saturate-100"
+        className="saturate-[.3] group-hover/bento:saturate-100"
         src={frontend}
         alt="Web- and mobile app development"
         placeholder="blur"
@@ -186,7 +186,7 @@ const items = [
       "Translating complex data into actionable insights, I unlock the narratives hidden within numbers, guiding strategic decisions.",
     header:
       <Image
-        className="saturate-[.65] group-hover/bento:saturate-100"
+        className="saturate-[.3] group-hover/bento:saturate-100"
         src={analytics}
         alt="Analytics"
         placeholder="blur"
