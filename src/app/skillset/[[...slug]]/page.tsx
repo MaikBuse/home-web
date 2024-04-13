@@ -27,7 +27,7 @@ export default async function Skillset({ params }: { params: { slug: string[] } 
           <Tabs slug={trimmedSlug} />
         </div>
       </Container>
-      <CallToAction className='lg:pt-[58em] md:pt-[68rem] sm:pt-[75rem] xs:pt-[84rem] pt-[90rem]' buttonText='Projects' buttonHref='/projects' />
+      <CallToAction className='pt-[10rem]' buttonText='Projects' buttonHref='/projects' />
     </>
   )
 }

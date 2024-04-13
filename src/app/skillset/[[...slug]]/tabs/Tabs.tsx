@@ -236,24 +236,11 @@ export function Tabs({ slug }: { slug: string }) {
     },
   ];
 
-  const tabsOrdered = [...tabs];
-
-  tabsOrdered.sort((a, b) => {
-    // Check if `a` is the item we want to move to the front
-    if (a.value === slug) {
-      return -1; // Move `a` towards the front
-    }
-    // Check if `b` is the item we want to move to the front
-    else if (b.value === slug) {
-      return 1; // Move `b` towards the front, effectively pushing `a` back
-    }
-    // Keep the original order for other items
-    return 0;
-  });
+  const foundIdx = tabs.findIndex((tab) => { return tab.value === slug });
 
   return (
-    <div className="h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-start justify-start">
-      <TabsComponent tabs={tabs} tabsOrdered={tabsOrdered} />
+    <div className="flex flex-col max-w-5xl mx-auto w-full items-start justify-start">
+      <TabsComponent tabs={tabs} selectedIdx={foundIdx >= 0 ? foundIdx : 0} />
     </div>
   );
 }
@@ -266,31 +253,18 @@ type Tab = {
 
 export const TabsComponent = ({
   tabs: propTabs,
-  tabsOrdered,
+  selectedIdx,
   containerClassName,
   activeTabClassName,
   tabClassName,
-  contentClassName,
 }: {
   tabs: Tab[];
-  tabsOrdered: Tab[];
+  selectedIdx: number;
   containerClassName?: string;
   activeTabClassName?: string;
   tabClassName?: string;
-  contentClassName?: string;
 }) => {
-  const [active, setActive] = useState<Tab>(tabsOrdered[0]);
-  const [tabs, setTabs] = useState<Tab[]>(tabsOrdered);
-
-  const moveSelectedTabToTop = (idx: number) => {
-    const newTabs = [...tabsOrdered];
-    const selectedTab = newTabs.splice(idx, 1);
-    newTabs.unshift(selectedTab[0]);
-    setTabs(newTabs);
-    setActive(newTabs[0]);
-  };
-
-  const [hovering, setHovering] = useState(false);
+  const [active, setActive] = useState<number>(selectedIdx);
 
   return (
     <>
@@ -304,16 +278,14 @@ export const TabsComponent = ({
           <button
             key={tab.title}
             onClick={() => {
-              moveSelectedTabToTop(idx);
+              setActive(idx);
             }}
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
             className={cn("relative w-32 h-24 px-4 py-2", tabClassName)}
             style={{
               transformStyle: "preserve-3d",
             }}
           >
-            {active.value === tab.value && (
+            {active === idx && (
               <motion.div
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
@@ -330,62 +302,7 @@ export const TabsComponent = ({
           </button>
         ))}
       </div>
-      <FadeInDiv
-        tabs={tabs}
-        active={active}
-        key={active.value}
-        hovering={hovering}
-        className={cn("mt-[3rem]", contentClassName)}
-      />
+      {propTabs[active].content}
     </>
   );
 };
-
-export const FadeInDiv = ({
-  className,
-  tabs,
-  hovering,
-}: {
-  className?: string;
-  key?: string;
-  tabs: Tab[];
-  active: Tab;
-  hovering?: boolean;
-}) => {
-  const isActive = (tab: Tab) => {
-    return tab.value === tabs[0].value;
-  };
-  return (
-    <div className="relative w-full h-full">
-      {tabs.map((tab, idx) => (
-        <motion.div
-          key={tab.value}
-          layoutId={tab.value}
-          style={{
-            scale: 1 - idx * 0.1,
-            top: hovering ? idx * -50 : 0,
-            zIndex: -idx,
-            opacity: idx < 3 ? 1 - idx * 0.1 : 0,
-          }}
-          animate={{
-            y: isActive(tab) ? [0, 40, 0] : 0,
-          }}
-          className={cn("w-full h-full absolute top-0 left-0", className)}
-        >
-          {isActive(tab) ? tab.content : <BackgroundTab title={tab.title} />}
-        </motion.div>
-      ))
-      }
-    </div >
-  );
-};
-
-const BackgroundTab = ({ title }: { title: string }) => {
-  return (
-    <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-zinc-700 to-zinc-900">
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-        {title}
-      </h2>
-    </div>
-  );
-}
