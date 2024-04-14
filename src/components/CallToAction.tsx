@@ -1,10 +1,10 @@
 import Image from "next/image"
 import templeImage from '@/images/photos/temple.jpg'
-import SocialLink from '../social/SocialLink'
-import MailIcon from '../icons/MailIcon'
 import Link from "next/link"
-import { ConnectButton } from "../buttons/ConnectButton"
 import { cn } from "@/lib/cn"
+import SocialLink from "./social/SocialLink"
+import MailIcon from "./icons/MailIcon"
+import { ConnectButton } from "./buttons/ConnectButton"
 
 export default function CallToAction({ className = "", buttonText, buttonHref }: { className?: string, buttonText: string, buttonHref: string }) {
   return (
