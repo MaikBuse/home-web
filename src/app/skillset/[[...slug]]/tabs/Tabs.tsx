@@ -1,8 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/cn";
 import TabContainer from "./TabContainer";
 import cloud from '@/images/abstract/cloud.jpeg'
 import pm from '@/images/abstract/pm.jpeg'
@@ -15,6 +10,7 @@ import princeBadge from '@/images/badges/prince2.png';
 import psm2 from '@/images/badges/psm2.png';
 import pspo from '@/images/badges/pspo.png';
 import { ArrowPathIcon, BoltIcon, BookOpenIcon, ChartBarIcon, ChatBubbleLeftIcon, CircleStackIcon, CloudIcon, CodeBracketSquareIcon, CogIcon, CommandLineIcon, CpuChipIcon, CubeIcon, CurrencyEuroIcon, DevicePhoneMobileIcon, DocumentIcon, GlobeAltIcon, HandRaisedIcon, PlayIcon, ScaleIcon, ServerIcon } from "@heroicons/react/20/solid";
+import { TabsComponent } from "./TabsComponent";
 
 export function Tabs({ slug }: { slug: string }) {
   const tabs = [
@@ -245,64 +241,3 @@ export function Tabs({ slug }: { slug: string }) {
   );
 }
 
-type Tab = {
-  title: string;
-  value: string;
-  content?: string | React.ReactNode | any;
-};
-
-export const TabsComponent = ({
-  tabs: propTabs,
-  selectedIdx,
-  containerClassName,
-  activeTabClassName,
-  tabClassName,
-}: {
-  tabs: Tab[];
-  selectedIdx: number;
-  containerClassName?: string;
-  activeTabClassName?: string;
-  tabClassName?: string;
-}) => {
-  const [active, setActive] = useState<number>(selectedIdx);
-
-  return (
-    <>
-      <div
-        className={cn(
-          "flex flex-row items-center justify-center [perspective:1000px] relative flex-wrap no-visible-scrollbar max-w-full w-full",
-          containerClassName
-        )}
-      >
-        {propTabs.map((tab, idx) => (
-          <button
-            key={tab.title}
-            onClick={() => {
-              setActive(idx);
-            }}
-            className={cn("relative w-32 h-24 px-4 py-2", tabClassName)}
-            style={{
-              transformStyle: "preserve-3d",
-            }}
-          >
-            {active === idx && (
-              <motion.div
-                layoutId="clickedbutton"
-                transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-                className={cn(
-                  "absolute inset-0 bg-zinc-800",
-                  activeTabClassName
-                )}
-              />
-            )}
-
-            <span className="relative block text-white hover:text-teal-400">
-              {tab.title}
-            </span>
-          </button>
-        ))}
-      </div>
-      {propTabs[active].content}
-    </>
-  );
-};
