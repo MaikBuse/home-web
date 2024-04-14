@@ -1,7 +1,5 @@
 import { type Metadata } from 'next'
-
 import { Layout } from '@/components/Layout'
-
 import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
@@ -12,11 +10,6 @@ export const metadata: Metadata = {
   },
   description:
     "Hi, I&apos;m Maik. A Hamburg City based software enthusiast. No matter if cloud infrastructure, back- or frontend development, I strive to architect and implement the most optimal solutions.",
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
 }
 
 export default function RootLayout({
