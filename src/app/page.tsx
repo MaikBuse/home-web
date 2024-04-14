@@ -1,8 +1,8 @@
+import { BentoGrid } from '@/components/BentoGrid';
+import CallToAction from '@/components/CallToAction';
+import { GoogleGemini } from '@/components/GoogleGemini';
 import Hero from '@/components/Hero'
-import { BentoGrid } from '@/components/ui/BentoGrid'
 import React from "react";
-import { GoogleGemini } from '@/components/ui/GoogleGemini'
-import CallToAction from '@/components/ui/CallToAction';
 
 export default async function Home() {
   return (

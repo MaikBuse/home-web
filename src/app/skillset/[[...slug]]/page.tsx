@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
-import CallToAction from '@/components/ui/CallToAction'
 import { Tabs } from './tabs/Tabs'
 import { Container } from '@/components/Container'
+import CallToAction from '@/components/CallToAction';
 
 export const metadata: Metadata = {
   title: 'Skillset',

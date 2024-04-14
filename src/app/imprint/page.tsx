@@ -1,7 +1,7 @@
 import { SimpleLayout } from "@/components/SimpleLayout"
 import MailIcon from "@/components/icons/MailIcon"
 import SocialLink from "@/components/social/SocialLink"
-import CallToAction from "@/components/ui/CallToAction"
+import CallToAction from "@/components/CallToAction"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

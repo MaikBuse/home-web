@@ -5,7 +5,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoNext from '@/images/logos/next-js.svg'
 import logoSolance from '@/images/logos/solance.png'
-import CallToAction from '@/components/ui/CallToAction'
+import CallToAction from '@/components/CallToAction'
 
 const projects = [
   {
