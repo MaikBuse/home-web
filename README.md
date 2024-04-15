@@ -26,7 +26,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/MaikBuse/home-web">
-    <img src="https://maikbuse.com/logo.svg" alt="Logo Maik Buse" width="80" height="80">
+    <img src="https://maikbuse.com/logo.svg" alt="Logo Maik Buse" width="150" height="150">
   </a>
 
 <h3 align="center">Homepage of Maik Buse</h3>
