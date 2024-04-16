@@ -32,7 +32,6 @@ jobs:
             git clone git@github.com:MaikBuse/cloud-config.git
             cd cloud-config
 
-            git checkout main
             git config user.email "contact@maikbuse.com"
             git config user.name "CircleCI Job"
 
@@ -40,10 +39,10 @@ jobs:
             rm -f helm/home/web/Values.yaml
             echo 'web:' > helm/home/web/Values.yaml
             echo '  container:' >> helm/home/web/Values.yaml
-            echo "    image: mbuse0/home-web:\"$IMAGE_TAG\"" >> helm/home/web/Values.yaml
+            echo "    image: \"mbuse0/home-web:$IMAGE_TAG\"" >> helm/home/web/Values.yaml
 
             git add helm/home/web/Values.yaml
-            git commit -m "feat(home): bump image home-web to sha-$IMAGE_TAG"
+            git commit -m "feat(home): CircleCI bump image of home-web to tag $IMAGE_TAG"
             git push origin main
 workflows:
   build:
