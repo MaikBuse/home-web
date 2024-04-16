@@ -57,10 +57,10 @@ export const GoogleGeminiEffect = ({
   return (
     <div className="h-full inset-0 sm:px-8 flex justify-center">
       <div className={cn("sticky h-[50rem] top-[18vh] w-full max-w-7xl lg:px-8", className)}>
-        <p className="text-4xl md:text-5xl xs:text-5xl font-normal text-center text-neutral-200">
+        <p className="text-4xl md:text-5xl xs:text-5xl font-normal text-center text-neutral-200 mx-2 xs:mx-2 md:mx-auto">
           {title}
         </p>
-        <p className="text-xl md:text-xl font-normal text-center text-neutral-400 pt-[4rem] max-w-lg mx-auto">
+        <p className="text-xl md:text-xl font-normal text-center text-neutral-400 pt-[4rem] max-w-lg mx-2 xs:mx-2 md:mx-auto">
           {description}
         </p>
         <Link href={"/skillset/project"}>
