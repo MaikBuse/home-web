@@ -62,6 +62,7 @@ export default function Projects() {
                     src={project.logo}
                     alt={project.name}
                     className="h-10 w-10"
+                    placeholder='blur'
                     style={{
                       maxWidth: "100%",
                       height: "auto"
