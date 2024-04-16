@@ -23,9 +23,6 @@ jobs:
   configurate:
     executor: arm
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - ${SSH_FINGERPRINT}
       - run:
           name: Commit to GitHub
           command: |
