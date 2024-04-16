@@ -170,9 +170,8 @@ function Avatar({
       <Image
         src={"/logo.svg"}
         alt="Maik Buse"
-        className={clsx(large ? 'h-40 w-40' : 'h-20 w-20')}
-        width={large ? 160 : 80}
         height={large ? 160 : 80}
+        width={large ? 160 : 80}
         priority
         style={{
           maxWidth: "100%",
