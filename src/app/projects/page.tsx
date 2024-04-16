@@ -60,9 +60,8 @@ export default function Projects() {
                 <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-0">
                   <Image
                     src={project.logo}
-                    alt=""
+                    alt={project.name}
                     className="h-10 w-10"
-                    unoptimized
                     style={{
                       maxWidth: "100%",
                       height: "auto"

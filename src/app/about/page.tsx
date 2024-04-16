@@ -41,9 +41,8 @@ function Role({ role }: { role: Role }) {
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-0">
         <Image
           src={role.logo}
-          alt=""
+          alt="Maik Buse"
           className="h-7 w-7"
-          unoptimized
           style={{
             maxWidth: "100%",
             height: "auto"
