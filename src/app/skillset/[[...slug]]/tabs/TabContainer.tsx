@@ -32,7 +32,7 @@ export default function TabContainer(
             alt={title}
             width={2432}
             height={1442}
-            priority={true}
+            priority
           />
           <div className="max-w-xl lg:row-start-3 lg:mt-10 lg:max-w-md lg:border-t lg:border-white/10 lg:pt-10">
             <dl className="max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
