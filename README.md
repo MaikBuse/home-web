@@ -77,6 +77,8 @@ This repository hosts the source code for my personal homepage, built using Next
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
 * [![Tailwindcss][Tailwindcss]][Tailwindcss-url]
+* [![Docker][Docker]][Docker-url]
+* [![CircleCI][CircleCI]][CircleCI-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,10 +158,13 @@ Project Link: [https://github.com/MaikBuse/home-web](https://github.com/MaikBuse
 [issues-url]: https://github.com/MaikBuse/home-web/issues
 [license-shield]: https://img.shields.io/github/license/MaikBuse/home-web.svg?style=for-the-badge
 [license-url]: https://github.com/MaikBuse/home-web/blob/main/LICENSE.md
-[product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Tailwindcss]: https://img.shields.io/badge/tailwindcss-0F172A?style=for-the-badge&&logo=tailwindcss
 [Tailwindcss-url]: https://tailwindcss.com
+[Docker]: https://img.shields.io/badge/Docker-20232A?style=for-the-badge&logo=docker
+[Docker-url]: https://docker.com
+[CircleCI]: https://img.shields.io/badge/CircleCI-20232A?style=for-the-badge&logo=circleci
+[CircleCI-url]: https://circleci.com
