@@ -3,8 +3,9 @@ import Image from "next/image"
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoNext from '@/images/logos/next-js.svg'
+import logoNext from '@/images/logos/next.png'
 import logoSolance from '@/images/logos/solance.png'
+import logoKubernetes from '@/images/logos/kubernetes.png'
 import CallToAction from '@/components/CallToAction'
 
 const projects = [
@@ -18,11 +19,20 @@ const projects = [
     logo: logoSolance,
   },
   {
+    name: 'Cloud Orchestration',
+    description:
+      `Discover the technical foundations powering my website and numerous other microservices, all managed through 
+      a fully automated Kubernetes cluster. Among other technologies, this project utilizes Terraform to implement 
+      infrastructure as code, offering a scalable and repeatable environment.`,
+    link: { href: 'https://github.com/MaikBuse/cloud-config', label: 'github.com/cloud-config' },
+    logo: logoKubernetes,
+  },
+  {
     name: 'Next.js Homepage',
     description:
       `Explore how I built this website using the Next.js framework. Discover how you can leverage its robust 
       features to deliver a dynamic, fast, and SEO-friendly web experience. `,
-    link: { href: 'https://github.com/MaikBuse/home-web', label: 'github.com' },
+    link: { href: 'https://github.com/MaikBuse/home-web', label: 'github.com/home-web' },
     logo: logoNext,
   }
 ]
@@ -55,7 +65,7 @@ export default function Projects() {
           className="grid grid-cols-1 gap-x-12 gap-y-[82px] sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
-            <Card as="li" key={project.name} className='h-[20rem] flex flex-col justify-between'>
+            <Card as="li" key={project.name} className='h-[25rem] xs:h-[18rem] sm:h-[25rem] flex flex-col justify-between'>
               <div>
                 <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-0">
                   <Image
