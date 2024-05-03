@@ -32,6 +32,7 @@ export function Footer() {
                 <NavLink href="/skillset">Skillset</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/imprint">Imprint</NavLink>
+                <NavLink href="https://keycloak-admin.maikbuse.com/realms/home/account/">Login</NavLink>
               </div>
               <p className="text-sm text-zinc-500">
                 &copy; {new Date().getFullYear()} Maik Buse. All rights

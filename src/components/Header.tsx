@@ -102,6 +102,7 @@ function MobileNavigation(
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/skillset">Skillset</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
+                <MobileNavItem href="https://keycloak-admin.maikbuse.com/realms/home/account/">Login</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -148,6 +149,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/skillset">Skillset</NavItem>
         <NavItem href="/projects">Projects</NavItem>
+        <NavItem href="https://keycloak-admin.maikbuse.com/realms/home/account/">Login</NavItem>
       </ul>
     </nav>
   )
