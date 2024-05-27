@@ -8,7 +8,7 @@ executors:
       image: ubuntu-2004:current
     resource_class: arm.medium
 jobs:
-  publish:
+  build:
     executor: arm
     steps:
       - checkout
@@ -20,7 +20,7 @@ jobs:
           registry: docker.io 
           image: mbuse0/home-web
           tag: ${CIRCLE_SHA1}
-  configurate:
+  deploy:
     executor: arm
     steps:
       - run:
@@ -44,7 +44,7 @@ jobs:
 workflows:
   build:
     jobs:
-      - publish
-      - configurate:
+      - build
+      - deploy:
           requires:
-            - publish
+            - build

@@ -1,14 +1,11 @@
 # Base image
-FROM node:21.7.3-slim AS base
+FROM node:22.2.0-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
 # Installing build essentials and other dependencies
-RUN apt-get update && apt-get install -y \
-    libc6-dev \
-    build-essential \
-    libvips-dev \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache libc6-compat
+
 WORKDIR /app
 
 COPY package.json package-lock.json ./
@@ -30,12 +27,13 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
+
 # Optionally disable Next.js telemetry at runtime
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
 # Setup user and group
-RUN groupadd --system --gid 1001 nodejs && \
-    useradd --system --uid 1001 --gid nodejs nextjs
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
 
