@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/cn";
 import { motion, MotionValue } from "framer-motion";
 import React from "react";
@@ -38,10 +39,6 @@ export function GoogleGemini({ className }: { className?: string }) {
   );
 }
 
-const transition = {
-  duration: 0,
-  ease: "linear",
-};
 
 export const GoogleGeminiEffect = ({
   pathLengths,
@@ -54,6 +51,11 @@ export const GoogleGeminiEffect = ({
   description: string;
   className?: string;
 }) => {
+  const transition = {
+    duration: 0,
+    ease: "linear",
+  };
+
   return (
     <div className="h-full inset-0 sm:px-8 flex justify-center">
       <div className={cn("sticky h-[50rem] top-[18vh] w-full max-w-7xl lg:px-8", className)}>
