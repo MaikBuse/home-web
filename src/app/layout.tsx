@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Maik Buse',
     default:
-      'Maik Buse - Solution Architect',
+      'Maik Buse - Software Architect',
   },
   description:
     "Hi, I&apos;m Maik. A Hamburg City based software enthusiast. No matter if cloud infrastructure, back- or frontend development, I strive to architect and implement the most optimal solutions.",

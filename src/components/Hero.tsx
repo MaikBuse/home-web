@@ -22,7 +22,7 @@ export function Hero() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-zinc-100">
-            Solution architect, developer and projectmanager.
+            Software architect, developer and projectmanager.
           </h1>
           <p className="mt-6 text-base text-zinc-400">
             Hi, I&apos;m Maik. A Hamburg City based software enthusiast.

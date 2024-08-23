@@ -75,7 +75,7 @@ function Resume() {
   let resume: Array<Role> = [
     {
       company: 'HANSAINVEST Real Assets GmbH',
-      title: 'Projectlead Digital Transformation',
+      title: 'Software Architect',
       logo: logoHira,
       start: '2021',
       end: {
@@ -206,7 +206,7 @@ export default function About() {
                 have been the bedrock of my career.
               </p>
               <p>
-                Today, as a solution architect and IT projectmanager, my broad expertise across cloud
+                Today, as a software architect and IT projectmanager, my broad expertise across cloud
                 infrastructure, front- and backend development, enables me to devise innovative solutions.
                 What sets me apart is not just my technical skills but my genuine enthusiasm. For me, technology
                 is an endless exploration, one that I am as passionate about today as I was when I first started.
