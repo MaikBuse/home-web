@@ -4,10 +4,6 @@ orbs:
   docker: circleci/docker@2.6.0
 
 executors:
-  arm:
-    machine:
-      image: ubuntu-2004:current
-    resource_class: arm.medium
   amd64:
     machine:
       # Using the default CircleCI machine image which is AMD64
@@ -15,19 +11,6 @@ executors:
     resource_class: medium
 
 jobs:
-  build_arm:
-    executor: arm
-    steps:
-      - checkout
-      - docker/check
-      - docker/build:
-          image: mbuse0/home-web
-          tag: ${CIRCLE_SHA1}-arm
-      - docker/push:
-          registry: docker.io 
-          image: mbuse0/home-web
-          tag: ${CIRCLE_SHA1}-arm
-
   build_amd64:
     executor: amd64
     steps:
@@ -42,18 +25,18 @@ jobs:
           command: docker push mbuse0/home-web:${CIRCLE_SHA1}-amd64
 
   deploy:
-    executor: arm
+    executor: amd64
     steps:
       - run:
           name: Commit to GitHub
           command: |
-            git clone git@github.com:MaikBuse/cloud-config.git
-            cd cloud-config
+            git clone git@github.com:MaikBuse/pub-talos-cluster.git
+            cd pub-talos-cluster
 
             git config user.email "contact@maikbuse.com"
             git config user.name "CircleCI Job"
 
-            IMAGE_TAG=${CIRCLE_SHA1}
+            IMAGE_TAG=${CIRCLE_SHA1}-amd64
             rm -f helm/home/web/Values.yaml
             echo 'web:' > helm/home/web/Values.yaml
             echo '  container:' >> helm/home/web/Values.yaml
@@ -66,9 +49,7 @@ jobs:
 workflows:
   build_and_deploy:
     jobs:
-      - build_arm
       - build_amd64
       - deploy:
           requires:
-            - build_arm
             - build_amd64
