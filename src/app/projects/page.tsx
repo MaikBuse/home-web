@@ -6,9 +6,19 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import logoNext from '@/images/logos/next.png'
 import logoSolance from '@/images/logos/solance.png'
 import logoKubernetes from '@/images/logos/kubernetes.png'
+import logoSyndicode from '@/images/logos/syndicode.png'
 import CallToAction from '@/components/CallToAction'
 
 const projects = [
+  {
+    name: 'Syndicode',
+    description:
+      `A multiplayer strategy game for programmers set in cyberpunk Tokyo. Features a Rust gRPC server
+      and a Next.js web client with deck.gl map visualization.
+      Players compete by managing corporations, controlling districts, and building automated strategies.`,
+    link: { href: 'https://www.syndicode.dev', label: 'syndicode.dev' },
+    logo: logoSyndicode,
+  },
   {
     name: 'Alarmboard',
     description:
