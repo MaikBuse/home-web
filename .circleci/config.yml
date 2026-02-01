@@ -1,0 +1,74 @@
+version: 2.1
+
+orbs:
+  docker: circleci/docker@2.6.0
+
+executors:
+  arm:
+    machine:
+      image: ubuntu-2004:current
+    resource_class: arm.medium
+  amd64:
+    machine:
+      # Using the default CircleCI machine image which is AMD64
+      image: ubuntu-2004:current
+    resource_class: medium
+
+jobs:
+  build_arm:
+    executor: arm
+    steps:
+      - checkout
+      - docker/check
+      - docker/build:
+          image: mbuse0/home-web
+          tag: ${CIRCLE_SHA1}-arm
+      - docker/push:
+          registry: docker.io 
+          image: mbuse0/home-web
+          tag: ${CIRCLE_SHA1}-arm
+
+  build_amd64:
+    executor: amd64
+    steps:
+      - checkout
+      - docker/check
+      - run:
+          name: Build for AMD64
+          command: |
+            docker build -t mbuse0/home-web:${CIRCLE_SHA1}-amd64 .
+      - run:
+          name: Push AMD64 image
+          command: docker push mbuse0/home-web:${CIRCLE_SHA1}-amd64
+
+  deploy:
+    executor: arm
+    steps:
+      - run:
+          name: Commit to GitHub
+          command: |
+            git clone git@github.com:MaikBuse/cloud-config.git
+            cd cloud-config
+
+            git config user.email "contact@maikbuse.com"
+            git config user.name "CircleCI Job"
+
+            IMAGE_TAG=${CIRCLE_SHA1}
+            rm -f helm/home/web/Values.yaml
+            echo 'web:' > helm/home/web/Values.yaml
+            echo '  container:' >> helm/home/web/Values.yaml
+            echo "    image: \"mbuse0/home-web:$IMAGE_TAG\"" >> helm/home/web/Values.yaml
+
+            git add helm/home/web/Values.yaml
+            git commit -m "feat(home): CircleCI bump image of home-web to tag $IMAGE_TAG"
+            git push origin main
+
+workflows:
+  build_and_deploy:
+    jobs:
+      - build_arm
+      - build_amd64
+      - deploy:
+          requires:
+            - build_arm
+            - build_amd64

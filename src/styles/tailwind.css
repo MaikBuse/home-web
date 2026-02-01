@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* Styling the scrollbar for the whole page */
+::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #333; /* dark track as per your theme */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #219183; /* teal accent color */
+  border-radius: 20px;
+  border: 3px solid #333; /* same as track color */
+}
