@@ -9,7 +9,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci --force;
+RUN npm ci;
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -49,5 +49,8 @@ USER nextjs
 
 EXPOSE 3000
 ENV PORT 3000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD wget -qO- http://localhost:3000/ || exit 1
 
 CMD ["node", "server.js"]
