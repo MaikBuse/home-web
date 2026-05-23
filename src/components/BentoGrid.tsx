@@ -6,7 +6,6 @@ import frontend from '@/images/abstract/frontend.jpeg'
 import backend from '@/images/abstract/backend.jpeg'
 import analytics from '@/images/abstract/analytics.jpeg'
 import container from '@/images/abstract/container.jpeg'
-import Link from "next/link";
 
 interface Tag {
   title: string,
@@ -202,7 +201,6 @@ export function BentoGrid({ className }: { className?: string }) {
         <BentoGridItem
           key={i}
           title={item.title}
-          href={item.href}
           description={item.description}
           header={item.header}
           tags={item.tags}
@@ -234,28 +232,23 @@ export const BentoGridCluster = ({
 export const BentoGridItem = ({
   className,
   title,
-  href,
   description,
   header,
   tags
 }: {
   className?: string;
   title?: string | React.ReactNode;
-  href?: string;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   tags?: Tag[]
 }) => {
-  const link = `/skillset/${href}`;
-
   return (
-    <Link href={link}>
-      <div
-        className={cn(
-          "md:h-[420px] lg:h-[420px] xl:h-[380px] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-2 bg-black border-white/[0.2] border justify-between flex flex-col space-y-2",
-          className
-        )}
-      >
+    <div
+      className={cn(
+        "md:h-[420px] lg:h-[420px] xl:h-[380px] rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-none p-2 bg-black border-white/[0.2] border justify-between flex flex-col space-y-2",
+        className
+      )}
+    >
         <div className="relative flex-none aspect-video overflow-hidden rounded-lg bg-zinc-800">
           {header}
         </div>
@@ -274,7 +267,6 @@ export const BentoGridItem = ({
           </div>
         </div>
       </div>
-    </Link>
   );
 };
 

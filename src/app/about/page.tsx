@@ -245,7 +245,7 @@ export default function About() {
         </div>
         <CertificateCloud className='py-32' />
       </Container>
-      <CallToAction buttonText='Skillset' buttonHref='/skillset' />
+      <CallToAction buttonText='Projects' buttonHref='/projects' />
     </>
   );
 }

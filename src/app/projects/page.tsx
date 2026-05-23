@@ -116,7 +116,7 @@ export default function Projects() {
           ))}
         </ul>
       </SimpleLayout>
-      <CallToAction buttonText='Skillset' buttonHref='/skillset' className='pt-40' />
+      <CallToAction buttonText='About' buttonHref='/about' className='pt-40' />
     </>
   );
 }
