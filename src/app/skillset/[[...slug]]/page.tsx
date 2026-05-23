@@ -9,6 +9,19 @@ export const metadata: Metadata = {
     "What I Work With",
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: [] },
+    { slug: ['project'] },
+    { slug: ['cloud'] },
+    { slug: ['container'] },
+    { slug: ['devops'] },
+    { slug: ['backend'] },
+    { slug: ['frontend'] },
+    { slug: ['analytics'] },
+  ]
+}
+
 export default async function Skillset({ params }: { params: { slug: string[] } }) {
   const trimmedSlug = Array.isArray(params.slug) ? params.slug[0] : "project";
 
