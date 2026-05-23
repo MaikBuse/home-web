@@ -3,7 +3,7 @@ import Image from "next/image"
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoNext from '@/images/logos/next.png'
+import logoMaikBuse from '@/images/logos/maikbuse.png'
 import logoSolance from '@/images/logos/solance.png'
 import logoKubernetes from '@/images/logos/kubernetes.png'
 import logoSyndicode from '@/images/logos/syndicode.png'
@@ -59,7 +59,7 @@ const projects = [
     description:
       `The source code for this website, built with Next.js.`,
     link: { href: 'https://github.com/MaikBuse/home-web', label: 'github.com/home-web' },
-    logo: logoNext,
+    logo: logoMaikBuse,
   }
 ]
 
