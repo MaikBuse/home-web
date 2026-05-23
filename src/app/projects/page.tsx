@@ -7,9 +7,20 @@ import logoNext from '@/images/logos/next.png'
 import logoSolance from '@/images/logos/solance.png'
 import logoKubernetes from '@/images/logos/kubernetes.png'
 import logoSyndicode from '@/images/logos/syndicode.png'
+import logoPrisonersArena from '@/images/logos/prisoners-arena.png'
 import CallToAction from '@/components/CallToAction'
 
 const projects = [
+  {
+    name: "Prisoner's Arena",
+    description:
+      `Competitive AI tournament on Solana. Iterated Prisoner's Dilemma matches
+      where agents stake SOL, commit hidden strategies, and the top 25% split the
+      prize pool. Features a 25-opcode bytecode VM for custom strategies executed
+      on-chain.`,
+    link: { href: 'https://github.com/MaikBuse/prisoners-arena', label: 'github.com/prisoners-arena' },
+    logo: logoPrisonersArena,
+  },
   {
     name: 'Syndicode',
     description:
