@@ -8,6 +8,7 @@ import logoSolance from '@/images/logos/solance.png'
 import logoKubernetes from '@/images/logos/kubernetes.png'
 import logoSyndicode from '@/images/logos/syndicode.png'
 import logoPrisonersArena from '@/images/logos/prisoners-arena.png'
+import logoGosuto from '@/images/logos/gosuto.png'
 import CallToAction from '@/components/CallToAction'
 
 const projects = [
@@ -20,6 +21,15 @@ const projects = [
       on-chain.`,
     link: { href: 'https://github.com/MaikBuse/prisoners-arena', label: 'github.com/prisoners-arena' },
     logo: logoPrisonersArena,
+  },
+  {
+    name: 'Gōsuto',
+    description:
+      `A cyberpunk-styled terminal Matrix client written in Rust. Single binary
+      with Vim-first navigation, end-to-end encrypted chat, and LiveKit-based VoIP
+      calls — all running in under 60 MB of RAM, no browser engine required.`,
+    link: { href: 'https://github.com/MaikBuse/gosuto', label: 'github.com/gosuto' },
+    logo: logoGosuto,
   },
   {
     name: 'Syndicode',
